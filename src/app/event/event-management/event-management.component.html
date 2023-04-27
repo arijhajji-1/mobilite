@@ -1,0 +1,79 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+
+<div class="main-content">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="card">
+            <div class="header">
+              <h4 class="title">Events</h4>
+              <button class="btn btn-rounded btn-outline-success" routerLink="/event/createEvent">
+                <i class="fa fa-plus" style="font-size:18px"></i> Create Event
+              </button>
+            </div>
+          
+              
+            <div class="content table-responsive table-full-width">
+              <table class="table table-bordered table-hover table-striped">
+                <thead>
+                  <tr>
+                    <th>Event Date</th>
+                    <th>Event Description</th>
+                    <th>Event Link Hangout</th>
+                    <th>Event Location</th>
+                    <th>Event Title</th>
+                    <th>Event Type</th>
+                    <th>Users</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                
+ 
+ <!-- inside the <tbody> tag -->
+  <tr *ngFor="let event of listevents">
+    <td>{{ event.eventDate  }}</td>
+    <td>{{ event.eventDescription }}</td>
+
+    <td>{{ event.eventLinkHangout }}</td>
+    <td>{{ event.eventLocation }}</td>
+
+      
+    <td>{{ event.eventTitle }}</td>
+    <td>{{ event.eventType }}</td>
+    <td>
+      <ul>
+        <li *ngFor="let user of event.users">{{ user }} </li>
+      </ul>
+    </td> 
+    <td>
+
+
+        <button type="button" style="margin-right: 20px; box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;"  (click)="deleteEvent(event.eventId)" class="btn btn-rounded btn-outline-danger" data-toggle="modal" data-target="#danger-alert-modal">
+          <i class="fa fa-trash" style="font-size:18px;color:black"></i>
+        </button>
+        <button style="box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;"  [routerLink]="['../updateEvent', event.eventId]" class="btn btn-rounded btn-outline-warning">
+          <i class="fa fa-edit" style="font-size:18px"></i>
+        </button>
+       
+
+
+
+      </td>
+  </tr>
+  
+
+  <button type="button" (click)="generateExcel()" class="btn btn-rounded btn-outline-primary">
+    <i class="fa fa-file-excel-o" style="font-size:18px"></i>
+  </button>
+  
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
