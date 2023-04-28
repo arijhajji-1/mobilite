@@ -3,7 +3,6 @@
     <table class="table table-striped">
       <thead>
         <tr>
-          <th>Reservation Id</th>
           <th>User</th>
           <th>Formation </th>
           <th>Status</th>
@@ -12,7 +11,6 @@
       </thead>
       <tbody>
         <tr *ngFor="let reservation of reservations">
-          <td>{{ reservation.reservationFormationId }}</td>
           <td>{{ reservation.user.Firstname }}</td>
           <td>{{ reservation.formation.formationSubjet }}</td>
           <td>{{ reservation.reservationFormationStatus }}</td>
