@@ -14,6 +14,10 @@ import { AppComponent } from './app.component';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 import { CommonModule } from '@angular/common';
 import { EventModule } from './event/event.module';
+import { FormationManagement } from './formation/FormationManagement/formation.component';
+import { ReservationComponent } from './reservation/reservation.component';
+import { FormationModule } from './formation/formation.module';
+import { ReservationModule } from './reservation/reservation.module';
 
 @NgModule({
   imports: [
@@ -26,13 +30,18 @@ import { EventModule } from './event/event.module';
     SidebarModule,
     AppRoutingModule,
     EventModule,
+    FormationModule,
     ReactiveFormsModule,
+    ReservationModule,
+    
 
     CommonModule
     
   ],
   declarations: [
     AppComponent,
+    
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

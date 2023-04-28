@@ -1,0 +1,68 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+
+<div class="main-content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="header">
+            <h4 class="title">Update Formation</h4>
+          </div>
+
+          <div class="content">
+            <form (ngSubmit)="onSubmit()" #formationForm="ngForm">
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <label>Formation Start Time</label>
+                    <input type="time" class="form-control" [(ngModel)]="formation.formationStartTime" name="formationStartTime" required>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <label>Formation End Time</label>
+                    <input type="time" class="form-control" [(ngModel)]="formation.formationEndTime" name="formationEndTime" required>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <label>Formation Date</label>
+                    <input type="date" class="form-control" [(ngModel)]="formation.formationDate" name="formationDate" required>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <label>Formation Subject</label>
+                    <input type="text" class="form-control" [(ngModel)]="formation.formationSubjet" name="formationSubjet" required>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <label>Formation Former</label>
+                    <input type="text" class="form-control" [(ngModel)]="formation.formationFormer" name="formationFormer" required>
+                  </div>
+                </div>
+              </div>
+
+              <button type="submit" class="btn btn-success btn-fill pull-right">Update Formation</button>
+              <div class="clearfix"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -11,6 +11,8 @@ export const ROUTES: RouteInfo[] = [
     { path: '/dashboard', title: 'Dashboard',  icon: 'pe-7s-graph', class: '' },
 
     { path: '/event/event', title: 'List Events',  icon:'pe-7s-note2', class: '' },
+    {path:'formation/formation' , title:'List Formation' ,icon:'pe-7s-note2', class: '' },
+    {path:'reservation/reservation' , title:'List Reservation' ,icon:'pe-7s-note2', class: '' },
    
 ];
 

@@ -29,7 +29,16 @@ component:HomeComponent
   {
     path:'event',
     loadChildren:() =>import('./event/event.module').then(e=>e.EventModule)
-  }
+  },
+  {
+    path:'formation',
+    loadChildren:() =>import('./formation/formation.module').then(e=>e.FormationModule)
+  },
+
+  {
+    path:'reservation',
+    loadChildren:() =>import('./reservation/reservation.module').then(e=>e.ReservationModule)
+  },
 ];
 
 @NgModule({

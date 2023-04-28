@@ -13,6 +13,7 @@ export class Event {
   public eventLinkHangout!: string;
   public eventLocation!: string;
   public users!: User[]; // array of users who will attend the event
+  attendeeEmails: string[] = [];
 
   }
   

@@ -1,0 +1,51 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+
+<div class="main-content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="header">
+            <h4 class="title">Formations</h4>
+            <button class="btn btn-rounded btn-outline-success" routerLink="/formation/createFormation">
+              <i class="fa fa-plus" style="font-size:18px"></i> Create Formation
+            </button>
+          </div>
+
+          <div class="content table-responsive table-full-width">
+            <table class="table table-bordered table-hover table-striped">
+              <thead>
+                <tr>
+                  <th>Formation Start Time</th>
+                  <th>Formation End Time</th>
+                    <th>Formation Date</th>
+                    <th>Formation Subject</th>
+                    <th>Formation Former</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let formation of listFormations">
+                  <td>{{ formation.formationStartTime }}</td>
+                  <td>{{ formation.formationEndTime }}</td>
+                  <td>{{ formation.formationDate}}</td>
+                  <td>{{ formation.formationSubjet }}</td>
+                    <td>{{ formation.formationFormer }}</td>
+                  <td>
+                    <button type="button" style="margin-right: 20px; box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;"  (click)="deleteFormation(formation.formationId)" class="btn btn-rounded btn-outline-danger" data-toggle="modal" data-target="#danger-alert-modal">
+                      <i class="fa fa-trash" style="font-size:18px;color:black"></i>
+                    </button>
+                    <button style="box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;"  [routerLink]="['../editFormation', formation.formationId]" class="btn btn-rounded btn-outline-warning">
+                      <i class="fa fa-edit" style="font-size:18px"></i>
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

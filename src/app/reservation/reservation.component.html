@@ -1,0 +1,36 @@
+<div class="container">
+    <h1>Reservation List</h1>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Reservation Id</th>
+          <th>User</th>
+          <th>Formation </th>
+          <th>Status</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let reservation of reservations">
+          <td>{{ reservation.reservationFormationId }}</td>
+          <td>{{ reservation.user.Firstname }}</td>
+          <td>{{ reservation.formation.formationSubjet }}</td>
+          <td>{{ reservation.reservationFormationStatus }}</td>
+          <td>
+            <div class="form-group">
+              <select [(ngModel)]="reservation.reservationFormationStatus" class="form-control">
+                <option value="">-- Select Status --</option>
+                <option value="APPROVED">Approve</option>
+                <option value="REJECTED">Reject</option>
+                <option value="CANCELED">Cancel</option>
+              </select>
+              <button class="btn btn-primary" (click)="updateReservation(reservation.reservationFormationId, reservation.reservationFormationStatus)">
+                Update
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
