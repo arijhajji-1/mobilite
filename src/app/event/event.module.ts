@@ -5,6 +5,7 @@ import { EventComponent } from './event-management/event-management.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CreateEventComponent } from './create-event/create-event.component';
 import { UpdateEventComponent } from './update-event/update-event.component';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 @NgModule({
   declarations: [EventComponent,CreateEventComponent,UpdateEventComponent],
@@ -12,6 +13,7 @@ import { UpdateEventComponent } from './update-event/update-event.component';
     CommonModule,
     EventRoutingModule,
     FormsModule,
+    NgxPaginationModule,
     ReactiveFormsModule // add the ReactiveFormsModule here
 
   ],

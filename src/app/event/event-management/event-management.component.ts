@@ -12,12 +12,26 @@ import * as FileSaver from 'file-saver';
 })
 export class EventComponent implements OnInit {
   public listevents: Event[] = [];
+  searchText: any;
+
    constructor(private eventService: EventService, private route: Router) { }
- 
+   
    ngOnInit(): void {
      this.getAllEvents(); // call the method to fetch the events
    }
- 
+   search() {
+    if (this.searchText != "") {
+      this.listevents = this.listevents.filter(event => {
+        return event.users.some(user => {
+          return user.email.toLocaleUpperCase().includes(this.searchText.toLocaleUpperCase());
+        });
+      });
+    } else {
+      this.ngOnInit();
+    }
+  }
+  
+  
    getAllEvents(): void {
      this.eventService.getAllEvents().subscribe(data => {
        console.log(data); // log the response from the API call
